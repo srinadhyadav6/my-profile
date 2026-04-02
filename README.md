@@ -1,16 +1,19 @@
-# React + Vite
+## Deployment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Deploying to Netlify
 
-Currently, two official plugins are available:
+1. **Connect to GitHub**: Log in to [Netlify](https://app.netlify.com/), click "Add new site", and select "Import from an existing project". Choose GitHub and select the `my-profile` repository.
+2. **Build Settings**: 
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+   - (Note: `netlify.toml` is included in the repo and will automatically configure these for you).
+3. **Environment Variables**:
+   Go to **Site settings > Build & deploy > Environment** and add the following:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+   - `VITE_GOOGLE_CLIENT_ID`
+   - `VITE_GEMINI_API_KEY`
+4. **Deploy**: Click "Deploy site".
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Post-Deployment (Google Login)
+If you are using Google OAuth, remember to add your new Netlify site URL (e.g., `https://your-site-name.netlify.app`) to the "Authorized redirect URIs" in your [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
