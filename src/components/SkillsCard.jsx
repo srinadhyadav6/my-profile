@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from './common/Card';
 import { Cpu, Code, Database, Globe } from 'lucide-react';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from './common/Card';
 import { Award, Trophy, MessageSquare } from 'lucide-react';
 

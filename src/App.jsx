@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { supabase } from './supabaseClient';
 import Sidebar from './components/Sidebar';
@@ -6,7 +6,6 @@ import DashboardComponent from './components/Dashboard';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import ChatBot from './components/ChatBot';
-import './index.css';
 
 function ProtectedRoute({ children }) {
   const [session, setSession] = useState(null);

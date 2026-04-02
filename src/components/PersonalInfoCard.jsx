@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from './common/Card';
 import { User, Languages, Heart, Cake } from 'lucide-react';
 
