@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import DashboardComponent from './components/Dashboard';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import ChatBot from './components/ChatBot';
 import './index.css';
 
 function ProtectedRoute({ children }) {
@@ -53,6 +54,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route 
@@ -63,8 +65,9 @@ function App() {
             </ProtectedRoute>
           } 
         />
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
+      <ChatBot />
     </BrowserRouter>
   );
 }
