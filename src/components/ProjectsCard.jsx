@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from './common/Card';
 import { Briefcase, FileText, Zap, Shield, Search, Monitor, ExternalLink } from 'lucide-react';
 
